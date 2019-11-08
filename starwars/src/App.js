@@ -18,9 +18,10 @@ const App = () => {
     .then(response =>{
       console.log(response)
       console.log(response.data.results)
-      response.data.results.forEach(item => {
-        setMedia(item)
-       })
+      // response.data.results.map(item => {
+      //   setMedia(item)
+      //  })
+      setMedia(response.data.results)
     })
     .catch( err =>{
       console.log('sorry no Starwars', err)
@@ -29,7 +30,7 @@ const App = () => {
   
 },[error]);
 
-//console.log(media)
+console.log(media)
 
 // media.forEach(item => {
 //  console.log(item)
@@ -39,7 +40,7 @@ const App = () => {
   return (
     <div className="App">
       <h1 className="Header">React Wars</h1>
-     <CardGrid media={media}  />
+      <CardGrid media={media}  />
     </div>
   );
 }
